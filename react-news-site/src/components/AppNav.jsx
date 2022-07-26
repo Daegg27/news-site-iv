@@ -5,6 +5,7 @@ import Search from './Search'
 
 import sections from '../data/sections.json' //data
 
+
 function AppNav (props){
 
     const[navItems, setNavItems] = useState(sections)  

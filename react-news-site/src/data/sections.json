@@ -1,18 +1,23 @@
 [
   {
-    "label": "OPINION",
-    "value": "opinion"
+    "label": "FRONT PAGE",
+    "value": "front_page"
   },
   {
-    "label": "WORLD",
-    "value": "world"
+    "label": "LATEST STORIES",
+    "value": "story"
   },
   {
-    "label": "NATIONAL",
-    "value": "national"
+    "label": "SHOW HN",
+    "value": "show_hn"
   },
   {
-    "label": "BUSINESS",
-    "value": "business"
+    "label": "ASK HN",
+    "value": "ask_hn"
+  },
+  {
+    "label": "AUTHOR: NO AS A SERVICE",
+    "value": "author_noasaservice"
   }
+  
 ]

@@ -1,6 +1,7 @@
 import Form from 'react-bootstrap/Form'
 import { useState, useEffect } from "react"
 import ArticleTeaser from "../components/ArticleTeaser"
+import {fetchArticles} from '../api/ArticlesAPI.jsx'
 
 
 function Search ({articles}) {
@@ -16,13 +17,18 @@ function Search ({articles}) {
     }
 
     useEffect( () => {
-        if (searchTitle != ''){
-            const filteredArticles = articles.filter(article => article.title.includes(searchTitle))
-            setResults(filteredArticles)
-        }
-        else {
-            setResults([])
-       }
+        // if (searchTitle != ''){
+        //     const filteredArticles = articles.filter(article => article.title.includes(searchTitle))
+        //     setResults(filteredArticles)
+        // }
+        
+        
+            fetchArticles(searchTitle)
+            .then((response) => {
+                setResults(response)
+                console.log(response)
+            })
+    
 
     }, [searchTitle])
 
@@ -43,7 +49,7 @@ function Search ({articles}) {
                 ? <div >
                     <h2>search results</h2>
                     {results.map((article) => (
-                    <ArticleTeaser key={article.id} {...article}/>
+                    <ArticleTeaser key={article.objectID} {...article}/>
                 ))}</div>
                 : ''
             }
